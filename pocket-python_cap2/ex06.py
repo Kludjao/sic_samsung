@@ -6,7 +6,5 @@ school2 = copy.deepcopy(school)
 
 print(school is school2)  
 
-print(school == school2)  
-
 print(school)
-print(school)
+print(school2)
