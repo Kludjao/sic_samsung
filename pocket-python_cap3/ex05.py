@@ -1,24 +1,31 @@
 Sub CopiarLinhasSemDuplicacaoDeArquivo()
     ' Caminhos dos arquivos de origem e destino
-    Dim caminhoOrigem As String, caminhoDestino As String
+    Dim caminhoOrigem As String
+    Dim caminhoDestino As String
     caminhoOrigem = "C:\Caminho\Para\Seu\ArquivoOrigem.xlsx"
     caminhoDestino = "C:\Caminho\Para\Seu\ArquivoDestino.xlsx"
     
-    ' Abre os arquivos
-    Dim wbOrigem As Workbook, wbDestino As Workbook
-    Dim wsOrigem As Worksheet, wsDestino As Worksheet
+    ' Declara e abre os arquivos
+    Dim wbOrigem As Workbook
+    Dim wbDestino As Workbook
+    Dim wsOrigem As Worksheet
+    Dim wsDestino As Worksheet
     Set wbOrigem = Workbooks.Open(caminhoOrigem)
     Set wsOrigem = wbOrigem.Sheets("Planilha1")
     Set wbDestino = Workbooks.Open(caminhoDestino)
     Set wsDestino = wbDestino.Sheets("Planilha1")
     
-    Dim ultimaLinhaOrigem As Long, ultimaLinhaDestino As Long
+    ' Encontra a última linha com dados em cada planilha
+    Dim ultimaLinhaOrigem As Long
+    Dim ultimaLinhaDestino As Long
     ultimaLinhaOrigem = wsOrigem.Cells(wsOrigem.Rows.Count, "A").End(xlUp).Row
     ultimaLinhaDestino = wsDestino.Cells(wsDestino.Rows.Count, "A").End(xlUp).Row
     
-    ' Loop pelas linhas da origem
-    Dim i As Long, j As Long
+    Dim i As Long
+    Dim j As Long
     Dim linhaIgual As Boolean
+    
+    ' Loop pelas linhas da origem
     For i = 1 To ultimaLinhaOrigem
         linhaIgual = False
         
@@ -35,7 +42,7 @@ Sub CopiarLinhasSemDuplicacaoDeArquivo()
         ' Se a linha não for duplicada, copia para a planilha de destino
         If Not linhaIgual Then
             ultimaLinhaDestino = ultimaLinhaDestino + 1
-            wsDestino.Cells(ultimaLinhaDestino, 1).Resize(, 3).Value = wsOrigem.Cells(i, 1).Resize(, 3).Value
+            wsDestino.Cells(ultimaLinhaDestino, 1).Resize(1, 3).Value = wsOrigem.Cells(i, 1).Resize(1, 3).Value
         End If
     Next i
     
@@ -45,3 +52,4 @@ Sub CopiarLinhasSemDuplicacaoDeArquivo()
     
     MsgBox "Linhas copiadas com sucesso!", vbInformation
 End Sub
+
