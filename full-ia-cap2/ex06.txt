@@ -1,0 +1,19 @@
+Interpretação dos Resultados:
+
+Após executar o código e calcular o vetor de pesos, observei as seguintes relações entre os fatores e o preço das casas:
+
+CRIM (Taxa de criminalidade): O preço das casas é inversamente proporcional à taxa de criminalidade. Um aumento na taxa de criminalidade tende a reduzir o preço das casas.
+INDUS (Relação da área comercial não comercial): Um aumento na proporção de áreas industriais pode aumentar o preço das casas, dependendo da valorização de certas regiões.
+NOX (Concentração de óxido nítrico): O preço das casas é inversamente proporcional à concentração de óxido nítrico. Mais poluição do ar geralmente leva a preços mais baixos.
+RM (Número de quartos): O preço das casas é diretamente proporcional ao número de quartos. Casas com mais quartos tendem a ter preços mais altos.
+LSTAT (Proporção da classe inferior da população): O preço das casas é inversamente proporcional à proporção da classe inferior da população. Um aumento em LSTAT tende a reduzir os preços.
+B (Proporção de pessoas negras na população): Dependendo do coeficiente, esse fator pode afetar os preços de forma positiva ou negativa, mas geralmente o impacto é negativo.
+PTRATIO (Razão Estudante/Professor): Um aumento na razão estudantes/professores pode estar associado a preços de casas mais baixos, indicando que escolas com menos alunos por professor tendem a ser mais valorizadas.
+AGE (Idade das casas): O preço das casas é inversamente proporcional à idade das casas. Casas mais antigas tendem a ser menos valorizadas.
+RAD (Distância até a rodovia radial): Este fator pode ter um impacto negativo se as casas mais próximas a rodovias forem menos valorizadas devido ao barulho ou poluição.
+DIS (Distância média ponderada para 5 centros de emprego): O preço das casas é inversamente proporcional à distância para centros de emprego. Quanto mais longe, menor o preço.
+TAX (Taxa de imposto predial): Um aumento na taxa de imposto pode estar associado a uma diminuição nos preços das casas, já que altos impostos podem desincentivo a compra.
+
+Diferença em relação à Pergunta Q5:
+
+A principal diferença entre os resultados obtidos agora e os da Pergunta Q5 é que, nesta análise, utilizei um conjunto completo de variáveis para prever os preços das casas, enquanto na Q5 utilizei apenas quatro variáveis (CRIM, NOX, RM e AGE). Isso resultou em um vetor de pesos mais abrangente e possivelmente mais preciso, pois considera a inter-relação entre múltiplos fatores que influenciam o preço das casas em Boston. Como resultado, alguns coeficientes podem diferir em magnitude e sinal, refletindo a complexidade da relação entre as variáveis.
